@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: sans-serif;
-      background: #000000;
+      background: #ffffff;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -21,17 +21,16 @@
   .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0;                 /* ← ここを 0 に */
+    gap: 0;                 
     width: 100%;
     max-width: 400px;
   }
 
   .tile {
-    background: #00B900;
+    background: #f9d423;
     color: #fff;
-    /* 角丸や外側 padding を外すと完全に密着 */
-    border-radius: 0;       /* ← 角丸なし */
-    padding: 20px 0;        /* 上下だけ余白を残す例（全部ゼロでも可） */
+    border-radius: 0;     
+    padding: 20px 0;     
     text-align: center;
     text-decoration: none;
     display: flex;
@@ -42,7 +41,7 @@
   }kground 0.3s;
     }
     .tile:hover {
-      background: #009900;
+      background: #f9d423;
     }
     .tile svg {
       width: 32px;
