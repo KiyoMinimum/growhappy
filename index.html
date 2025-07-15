@@ -84,14 +84,12 @@
   </div>
 
   <script>
-    const LIFF_ID = "2007685494";
-
-    async function main() {
-      await liff.init({ liffId: LIFF_ID });
-      if (!liff.isLoggedIn()) {
-        liff.login();
-      }
+  async function main() {
+    await liff.init({ liffUrl: "https://miniapp.line.me/2007685494-WNeOVGYo" }); // ← LIFF URL
+    if (!liff.isLoggedIn()) {
+      liff.login();
     }
+  }
 
     main();
   </script>
