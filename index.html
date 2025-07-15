@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>LINEミニアプリメニュー</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 2em;
+      background-color: #f8f8f8;
+    }
+    h1 {
+      margin-bottom: 1.5em;
+    }
+    .menu-button {
+      display: block;
+      width: 90%;
+      max-width: 400px;
+      margin: 0.5em auto;
+      padding: 1em;
+      font-size: 1.1em;
+      background: #00B900;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .menu-button:hover {
+      background: #009900;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>メニュー</h1>
+
+  <button class="menu-button" onclick="goTo('https://example.com/reserve')">予約する</button>
+  <button class="menu-button" onclick="goTo('https://example.com/history')">利用履歴</button>
+  <button class="menu-button" onclick="goTo('https://example.com/faq')">よくある質問</button>
+  <button class="menu-button" onclick="goTo('https://example.com/contact')">お問い合わせ</button>
+  <button class="menu-button" onclick="goTo('https://example.com/profile')">プロフィール</button>
+  <button class="menu-button" onclick="goTo('https://example.com/settings')">設定</button>
+
+  <script>
+    const LIFF_ID = "YOUR_LIFF_ID_HERE"; // ← あなたのLIFF IDに変更！
+
+    async function main() {
+      await liff.init({ liffId: LIFF_ID });
+      if (!liff.isLoggedIn()) {
+        liff.login();
+      }
+    }
+
+    function goTo(url) {
+      location.href = url;
+    }
+
+    main();
+  </script>
+
+</body>
+</html>
